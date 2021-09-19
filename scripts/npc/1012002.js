@@ -44,7 +44,7 @@ var equip;
 function start() {
     cm.getPlayer().setCS(true);
     var selStr = "Hello. I am Vicious, retired Sniper. However, I used to be the top student of Athena Pierce. Though I no longer hunt, I can make some archer items that will be useful for you...#b"
-    var options = ["Create a bow", "Create a crossbow", "Make a glove", "Upgrade a glove", "Create materials", "Create Arrows"];
+    var options = ["Create a bow", "Create a crossbow", "Make a glove", "Upgrade a glove", "Create materials", "Create Arrows", "Give me Mesos and Chaos Scrolls!"];
     for (var i = 0; i < options.length; i++) {
         selStr += "\r\n#L" + i + "# " + options[i] + "#l";
     }
@@ -94,6 +94,10 @@ function action(mode, type, selection) {
             for (var i = 0; i < items.length; i++) {
                 selStr += "\r\n#L" + i + "##t" + items[i] + "##l";
             }
+        } else if (selection == 6) { //give me mesos
+            cm.gainMeso(2147483647);
+            cm.gainItem(2049100, 100);
+            cm.dispose();
         }
         selectedType = selection;
         cm.sendSimple(selStr);
