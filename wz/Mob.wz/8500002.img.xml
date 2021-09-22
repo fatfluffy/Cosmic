@@ -3,7 +3,7 @@
     <imgdir name="info">
         <int name="bodyAttack" value="1" />
         <int name="level" value="125" />
-        <int name="maxHP" value="1590000" />
+        <int name="maxHP" value="500000000" />
         <int name="maxMP" value="80" />
         <int name="speed" value="60" />
         <int name="PADamage" value="800" />
@@ -12,7 +12,7 @@
         <int name="MDDamage" value="1200" />
         <int name="acc" value="230" />
         <int name="eva" value="40" />
-        <int name="exp" value="970000" />
+        <int name="exp" value="50000000" />
         <int name="undead" value="0" />
         <int name="pushed" value="12000" />
         <int name="noregen" value="1" />

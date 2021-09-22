@@ -39,13 +39,16 @@ public class BossHpCommand extends Command {
         for (Monster monster : player.getMap().getAllMonsters()) {
             if (monster != null && monster.isBoss() && monster.getHp() > 0) {
                 long percent = monster.getHp() * 100L / monster.getMaxHp();
-                String bar = "[";
-                for (int i = 0; i < 100; i++) {
-                    bar += i < percent ? "|" : ".";
-                }
-                bar += "]";
-                player.yellowMessage(monster.getName() + " (" + monster.getId() + ") has " + percent + "% HP left.");
-                player.yellowMessage("HP: " + bar);
+                String currentHp = String.format("%,d", monster.getHp());
+                String maxHp = String.format("%,d", monster.getMaxHp());
+//                String bar = "[";
+//                for (int i = 0; i < 100; i++) {
+//                    bar += i < percent ? "|" : ".";
+//                }
+//                bar += "]";
+                player.message(monster.getName() + " (" + monster.getId() + ") : " + currentHp + " / " + maxHp+ " " +
+                        "(" + percent + "%)");
+                // player.yellowMessage("HP: " + bar);
             }
         }
     }
